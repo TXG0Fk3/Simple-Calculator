@@ -29,6 +29,7 @@
   </object>
   <object_property>
 	(1,1,"GtkWindow","resizable","False",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkWindow","title","Simple Calculator",None,None,None,None,None,None,None,None,None),
 	(1,2,"GtkBox","homogeneous","True",None,None,None,None,None,None,None,None,None),
 	(1,2,"GtkOrientable","orientation","vertical",None,None,None,None,None,None,None,None,None),
 	(1,3,"GtkTextView","buffer",None,None,None,None,None,21,None,None,None,None),

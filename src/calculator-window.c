@@ -10,9 +10,14 @@ void app_activate(GtkApplication *app){
   GtkBuilder *builder;
   char vle1[10], opr, vle2[10];
   
-  win = gtk_application_window_new(GTK_APPLICATION(app));
-  gtk_window_set_title(GTK_WINDOW(win), "Simple Calculator");
+  builder = gtk_builder_new_from_resource("/com/github/TXG0Fk3/Simple-Calculator/calculator-window.ui");
+
+  win = GTK_WIDGET(gtk_builder_get_object(builder, "win"));
+  gtk_window_set_application(GTK_WINDOW(win), GTK_APPLICATION(app));
   
-  vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
-  grid = gtk_grid_new();
+  gtk_window_present(GTK_WINDOW(win));
+}
+
+void btn_signal(GtkButton *btn){
+  //TODO
 }
