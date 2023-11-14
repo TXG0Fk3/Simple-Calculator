@@ -7,6 +7,6 @@
 
 void app_activate(GtkApplication *app);
 
-void btn_signal(GtkButton *btn);
+void btn_signal(GtkButton *btn, gpointer *tb);
 
 #endif
