@@ -18,6 +18,7 @@
             <property name="cursor-visible">False</property>
             <property name="editable">False</property>
             <property name="monospace">True</property>
+            <property name="wrap-mode">char</property>
           </object>
         </child>
         <child>

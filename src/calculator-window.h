@@ -3,10 +3,10 @@
 
 #include <libadwaita-1/adwaita.h>
 #include <gtk-4.0/gtk/gtk.h>
-#include <string.h>
+#include "calculate.h"
 
 void app_activate(GtkApplication *app);
 
-void btn_signal(GtkButton *btn, gpointer *tb);
+void btn_signal(GtkButton *btn, gpointer tb);
 
-#endif
+#endif // CALCULATOR_WINDOW_H
