@@ -6,6 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-long double calculate(char *expression);
+double calculate(char *expression);
 
 #endif // CALCULATE_H

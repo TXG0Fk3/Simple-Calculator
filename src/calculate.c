@@ -1,6 +1,6 @@
 #include "calculate.h"
 
-long double calculate(char *expression){
+double calculate(char *expression){
     long double stack[512];
     int top = 0;
     char *postfix = malloc(sizeof(char) * strlen(expression)), *p = postfix;
