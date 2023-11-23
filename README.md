@@ -1,7 +1,6 @@
 # Simple Calculator
 
-![image](https://github.com/TXG0Fk3/Simple-Calculator/assets/137466333/cd4bffc9-e121-4344-85f1-a6fa1ab97fa0)
-
+![image](https://github.com/TXG0Fk3/Simple-Calculator/assets/137466333/bc8d7b9e-7bfa-4263-a7d3-f425b7f8c9f1)
  
 I am developing this program just as a way to train my new knowledge! :)
 
