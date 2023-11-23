@@ -46,17 +46,13 @@ void btn_signal(GtkButton *btn, gpointer tb){
     gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(tb), &end);
     text = gtk_text_buffer_get_text(GTK_TEXT_BUFFER(tb), &start, &end, FALSE);
 
-    double result = calculate(text);
-    g_free(text);
-
-    text = g_strdup_printf("%f", result);
+    text = calculate(text);
     gtk_text_buffer_set_text(GTK_TEXT_BUFFER(tb), text, -1);
     g_free(text);
   } else if (res){
     gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(tb), &end);
     gtk_text_buffer_insert(GTK_TEXT_BUFFER(tb), &end, label, -1);
   }
-  g_print("%s", label);
 }
 
 void erase(GtkButton *btn, gpointer tb){

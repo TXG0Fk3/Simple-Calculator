@@ -1,9 +1,10 @@
 #include "calculate.h"
 
-double calculate(char *expression){
+char *calculate(char *expression){
   double stack[512];
   int top = 0;
-  char *postfix = malloc(sizeof(char) * (strlen(expression) * 1.5)), *p = postfix;
+  int pr = 0;
+  char *postfix = malloc(sizeof(char) * (strlen(expression) * 2.5)), *p = postfix;
 
   for (char *s = expression; *s; s++){
     if (isdigit(*s) || *s == '.'){
@@ -11,7 +12,7 @@ double calculate(char *expression){
       *p++ = ' ';
     }
     if (*s == '+' || *s == '-' || *s == '*' || *s == '/'){
-      if (top && (stack[top-1] == '*' || stack[top-1] == '/')){
+      while (top && ((stack[top-1] == '*' || stack[top-1] == '/') || ((*s == '+' || *s == '-') && (stack[top-1] == '+' || stack[top-1] == '-')))){
         *p++ = stack[--top];
         *p++ = ' ';
       }
@@ -20,9 +21,12 @@ double calculate(char *expression){
 
     if (*s == '('){
       stack[top++] = *s;
+      pr++;
     }
 
     if (*s == ')'){
+      pr--;
+      if (pr < 0) return g_strdup_printf("ERRO");
       while (top && stack[top-1] != '('){
         *p++ = stack[--top];
         *p++ = ' ';
@@ -53,6 +57,7 @@ double calculate(char *expression){
     }
 
     if (*s == '+' || *s == '-' || *s == '*' || *s == '/'){
+      if (!top) return g_strdup_printf("ERRO");
       double b = stack[--top], a = stack[--top];
       if (*s == '+') stack[top++] = a + b;
       if (*s == '-') stack[top++] = a - b;
@@ -62,5 +67,6 @@ double calculate(char *expression){
   }
 
   free(postfix);
-  return stack[0];
+  return g_strdup_printf("%f", stack[0]);
 }
+
